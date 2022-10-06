@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <h4>배열</h4>
+    <div id="array"></div>
+    <hr>
+
+    <h4>이벤트 참조</h4>
+    <div id="click" style="width:200px; height:200px; margin:10px; background-color:red; color: white;">클릭하세요.</div>
+    <div id="dblclick" style="width:200px; height:200px; margin:10px; background-color:orange; color: white;">더블클릭하세요.
+    </div>
+    <div id="mouse" style="width:200px; height:200px; margin:10px; background-color:yellow; color: black;">마우스를 올려보세요.
+        그리고 마우스를 밖으로 보내보세요.</div>
+    <div id="keydown" style="width:200px; height:200px; margin:10px; background-color:green; color: white;">키를 누르세요.
+    </div>
+    <div id="change" style="width:200px; height:200px; margin:10px; background-color:blue; color: white;">입력창에 입력하세요. 다른
+        곳을 아무데나 클릭하세요.</div>
+    <input id="change_input" type="text" style="margin:10px;" placeholder="입력하세요.">
+    <hr>
+
+    <h4>메소드</h4>
+    <h5>String.length</h5>
+    <input id="length_input" type="text">
+    <div id="length"></div>
+
+    <h5>String.prototype.toUpperCase()</h5>
+    <input id="toUpperCase_input" type="text">
+    <div id="toUpperCase"></div>
+
+    <h5>String.prototype.indexOf('a')</h5>
+    <input id="indexOf_input" type="text">
+    <div id="indexOf"></div>
+
+    <h5>String.prototype.trim()</h5>
+    <input id="trim_input" type="text">
+    <div id="trim"></div>
+
+    <hr>
+
+    <h4>기본 문법</h4>
+    <input id="basic_input" type="text">
+
+    <h5>if문: 숫자인지 체크합니다.</h5>
+    <div id="if"></div>
+
+    <h5>for문: 숫자라면 1부터 해당 숫자까지 나타냅니다. </h5>
+    <div id="for"></div>
+
+    <h5>while문: 숫자라면 1부터 해당 숫자까지 나타냅니다.</h5>
+    <div id="while"></div>
+    <hr>
+</body>
+<script>
+    // 배열
+    let array = [];
+    array.push('apple');
+    array.push('banana');
+    array.push('watermelon');
+    array_area = document.querySelector('#array');
+    array_area.innerText = array[0] + '\n';
+    array_area.innerText += array[1] + '\n';
+    array_area.innerText += array[2];
+
+    // 이벤트 참조
+    // click
+    const click = document.querySelector('#click');
+
+    click.addEventListener('click', function () {
+        click.innerText = '클릭되었습니다.';
+    });
+
+    // dblclcik
+    const dblclick = document.querySelector('#dblclick');
+
+    dblclick.addEventListener('dblclick', function () {
+        dblclick.innerText = '더블클릭되었습니다.';
+    });
+
+    // mouseover/mouseleave
+    const mouse = document.querySelector('#mouse');
+
+    mouse.addEventListener('mouseover', function () {
+        mouse.innerText = '마우스가 영역에 들어왔습니다.';
+    });
+
+    mouse.addEventListener('mouseleave', function () {
+        mouse.innerText = '마우스가 영역을 벗어났습니다.';
+    });
+
+    // keydown
+    const keydown = document.querySelector('#keydown');
+
+    window.addEventListener('keydown', function (e) {
+        keydown.innerText = e.key;
+    });
+
+    // change
+    const change = document.querySelector('#change');
+    const change_input = document.querySelector('#change_input');
+
+    change_input.addEventListener('change', function () {
+        change.innerText = change_inpdut.value;
+    });
+
+
+    // 메소드
+    // String.length
+    const lengthInput = document.querySelector('#length_input');
+    const length = document.querySelector('#length');
+    lengthInput.addEventListener('change', function () {
+        length.innerText = lengthInput.value.length;
+    });
+
+    // String.prototype.toUpperCase()
+    const toUpperCaseInput = document.querySelector('#toUpperCase_input');
+    const toUpperCase = document.querySelector('#toUpperCase');
+    toUpperCaseInput.addEventListener('change', function () {
+        toUpperCase.innerText = toUpperCaseInput.value.toUpperCase();
+    });
+
+    // String.prototype.indexOf('a')
+    const indexOfInput = document.querySelector('#indexOf_input');
+    const indexOf = document.querySelector('#indexOf');
+    indexOfInput.addEventListener('change', function () {
+        indexOf.innerText = indexOfInput.value.indexOf('a');
+    });
+
+    // String.prototype.trim()
+    const trimInput = document.querySelector('#trim_input');
+    const trim = document.querySelector('#trim');
+    trimInput.addEventListener('change', function () {
+        trim.innerText = trimInput.value;
+    });
+
+    // 기본 문법
+    const basicInput = document.querySelector('#basic_input');
+
+    // if
+    const ifExample = document.querySelector('#if');
+    basicInput.addEventListener('change', function () {
+        if (!isNaN(basicInput.value)) {
+            ifExample.innerText = '숫자입니다.';
+        } else {
+            ifExample.innerText = '숫자가 아닙니다.';
+        }
+    });
+
+    // for
+    const forExample = document.querySelector('#for');
+    basicInput.addEventListener('change', function () {
+        if (!isNaN(basicInput.value)) {
+            for (let i = 1; i <= basicInput.value; i++) {
+                forExample.textContent += i;
+                forExample.textContent += ' ';
+            }
+        }
+    });
+
+
+    // while
+    const whileExample = document.querySelector('#while');
+    basicInput.addEventListener('change', function () {
+        if (!isNaN(basicInput.value)) {
+            let i = 1;
+            while (i <= basicInput.value) {
+                whileExample.textContent += i;
+                whileExample.textContent += ' ';
+                i++;
+            }
+        }
+    });
+
+// 기본 문법
+
+</script>
+
+</html>
