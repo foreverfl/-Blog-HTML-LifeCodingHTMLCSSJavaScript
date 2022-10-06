@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        /* 데스크탑 */
+        @media screen and (min-width : 1224px) {
+            .desktop {
+                color: white;
+                background-color: black;
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* 패드 */
+        @media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+            .pad {
+                color: white;
+                background-color: red;
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .mobile {
+                color: white;
+                background-color: blue;
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>color</h3>
+    <div style="color:red">키워드로 색을 설정합니다.</div>
+    <div style="color:#0000ff">RGB(16진수)로 색을 설정합니다.</div>
+    <div style="color:hsl(270,60%,70%)">HSL로 색을 설정합니다.</div>
+    <hr>
+
+    <h3>text-decoration</h3>
+    <div style="text-decoration: underline dotted">글자에 들어가는 선의 외형을 설정합니다.</div>
+    <hr>
+
+    <h3>font-size</h3>
+    <div style="font-size:xx-large">글자의 크기를 설정합니다. 1</div>
+    <div style="font-size:1.5rem">글자의 크기를 설정합니다. 2</div>
+    <div style="font-size:12px">글자의 크기를 설정합니다. 3</div>
+    <hr>
+
+    <h3>text-align</h3>
+    <div style="text-align:start">텍스트를 정렬합니다. 1</div>
+    <div style="text-align:center">텍스트를 정렬합니다. 2</div>
+    <div style="text-align:end">텍스트를 정렬합니다. 3</div>
+    <hr>
+
+    <h3>border</h3>
+    <div style="border:solid">요소의 가장자리를 설정합니다. 1</div>
+    <br>
+    <div style="border:dashed blue;">요소의 가장자리를 설정합니다. 2</div>
+    <br>
+    <div style="border:thick double #32a1ce;">요소의 가장자리를 설정합니다. 3</div>
+    <br>
+    <hr>
+
+    <h3>display</h3>
+    <div style="display:block; border:solid red"> 외부 디스플레이 레이아웃 1</div>
+    <br>
+    <div style="display:inline; border:solid red "> 외부 디스플레이 레이아웃 2</div>
+    <br>
+
+    <h4>내부 디스플레이 레이아웃 1: 플렉스</h4>
+    <div style="display:flex; border:solid red">
+        <div style="border:solid blue;">플렉스 1</div>
+        <div style="border:solid blue;">플렉스 2</div>
+        <div style="border:solid blue;">플렉스 3</div>
+    </div>
+    <br>
+    <h4>내부 디스플레이 레이아웃 2: 그리드</h4>
+    <div style="display:grid; grid-template-columns: 300px 300px; border:solid red">
+        <div style="border:solid blue;">그리드 1</div>
+        <div style="border:solid blue;">그리드 2</div>
+        <div style="border:solid blue;">그리드 3(칼럼이 2개 → 다음줄로 이동)</div>
+    </div>
+    <hr>
+
+    <h3>height / width</h3>
+    <div style="color:white; background-color:blue; width:300px; height:300px;">높이와 너비를 조정합니다.</div>
+    <hr>
+
+    <h3>margin / padding</h3>
+    <div
+        style="color:white; background-color:purple; width:300px; height:300px; margin: 50px; padding: 50px; border: 10px black solid ">
+        마진과 패딩을 가집니다.</div>
+    <hr>
+
+    <h3>미디어 쿼리</h3>
+    <p> 데스크탑 → 검정 / 패드 → 빨강 / 핸드폰 → 파랑</p>
+    <div class="desktop pad mobile">
+
+    </div>
+    <hr>
+
+</body>
+
+</html>
